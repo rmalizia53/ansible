@@ -1,0 +1,10 @@
+- name: Update and upgrade proxmox servers
+  hosts: pvenodes
+  tasks:
+    - name: Update package lists
+      apt:
+        update_cache: yes  # Corrected typo and indentation
+
+    - name: Upgrade all packages
+      apt:
+        upgrade: dist
