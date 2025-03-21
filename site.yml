@@ -1,6 +1,6 @@
 ---
  
- - hosts: all
+ - hosts: 192.168.53.18
    become: true
    pre_tasks:
  
@@ -22,3 +22,11 @@
         state: latest
      when: ansible_distribution == "Ubuntu"
 
+   - name: copy html file for site
+     tags: apache,apache,apache2,httpd
+     copy:
+       src: default_site.html
+       dest: /var/www/html/index.html
+       owner: root
+       group: root
+       mode: 0644
