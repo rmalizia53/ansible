@@ -1,16 +1,22 @@
 ---
  
- - hosts: 192.168.53.18
+ - hosts: all
    become: true
-   tasks:
-
+   pre_tasks:
  
+   - name: install updates (Ubuntu)
+     apt:
+       upgrade: dist
+       update_cache: yes
+     when: ansible_distribution == "Ubuntu"
+  
+ - hosts: web_servers
+   tasks:
    - name: install apache2 ans php packages for Ubuntu
      apt:
         name: 
           - apache2
           - libapache2-mod-php
         state: latest
-        update_cache: yes
      when: ansible_distribution == "Ubuntu"
 
