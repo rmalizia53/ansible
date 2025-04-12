@@ -1,0 +1,10 @@
+---
+# vars file for create_admin_user
+admin:
+- name: 'rich'
+    comment: 'Ultimate User'
+    uid: '1000'
+
+- name: 'semaphore'
+    comment: 'Semaphore App User'
+    uid: '1001'
