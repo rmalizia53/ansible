@@ -3,8 +3,8 @@
 admin:
 - name: 'rich'
     comment: 'Ultimate User'
-    uid: '1000'
+    uid: '1001'
 
 - name: 'semaphore'
     comment: 'Semaphore App User'
-    uid: '1001'
+    uid: '1002'
